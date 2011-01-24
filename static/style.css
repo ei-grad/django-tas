@@ -1,0 +1,214 @@
+/* General */
+
+/* белый        #ffffff
+   светлый      #ffcc99
+   яркий        #ff9944 */
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Sans;
+	background: white;
+	color: #333333;
+    font-size: 12px;
+}
+
+a {
+	color: #6a6a6a;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #dd6119;
+	text-decoration: underline;
+}
+
+p {
+    margin-top: 0;
+}
+
+div {
+    padding: 1em;
+}
+
+
+/* Header */
+
+div#header {
+	background: #ffcc99 url('/static/header-logo-bg.png')  no-repeat;
+	padding: 3em 0;
+	margin: 0;
+    text-align: right;
+}
+
+div#header h1 {
+	font-size: 2em;
+	font-weight: normal;
+    display: inline;
+    margin: 0;
+    padding: 1em;
+    color: white;
+    min-width: 10em;
+    text-align: center;
+    background-image: url('/static/header-link-bg.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* Footer */
+
+#footer {
+    margin-top: 1em;
+    clear: both;
+	background-color: #ffcc99;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid gray;
+	font-family: Monospace;
+	color: #555555;
+}
+
+/* Menu */
+
+#nav {
+    clear: both;
+	background-color: brown;
+    border-top: 1px solid white;
+    border-bottom: 1px solid lightgray;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#nav ul {
+    display: inline;
+    padding: 0;
+}
+
+#nav ul li {
+    display: inline;
+    margin: 0;    
+}
+
+#nav ul li a {
+    padding: 0.5em;
+    color: white;
+}
+
+#nav ul li a:hover {
+    background-color: #cc3333;
+}
+
+/* Login */
+
+#login form {
+	padding: 1em;
+    margin: 1em;
+    text-align: left;
+}
+
+/* Messages */
+
+.messages {
+    text-align: center;
+    margin: 1em;
+}
+.messages li {
+    display: inline-block;
+    color: #555555;
+    padding: 1em;
+}
+
+.success {
+    background-color: #ffcc99;
+}
+
+.warning {
+    background-color: #ff9944;
+}
+
+/* Report */
+
+.odd {
+    background-color: #ffeecc;
+}
+
+.even {
+    background-color: #fffcee;
+}
+
+.report {
+    font-family: Monospace;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.report td {
+    padding: 0.2em 1em;
+}
+
+/* Content */
+
+#content {
+}
+
+#content div {
+}
+
+#content table {
+    margin: 0;
+    font-family: Monospace;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#content td {
+    padding: 0.2em 1em;
+}
+
+#content td.address {
+    text-align: left;
+}
+
+#content td.bytes {
+    text-align: right;
+}
+
+/* Status - quota and internet session information. */
+
+#status {
+    width: 30em;
+    float: right;
+    background-color: #ff9944;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+#status * {
+    margin: 0;
+    padding: 0;
+}
+
+/* User name */
+
+#name {
+    padding-top: 0;
+    float: left;
+    clear: left;
+}
+
+#name h1 {
+    margin: 0;
+}
+
+/* Top10 */
+
+.top10 {
+    display: block;
+    width: 20em;
+}
+
+.top10 h3 {
+    margin-top: 0;
+}
+

@@ -1,0 +1,53 @@
+{% extends "logged.html" %}
+
+{% load netstat_extras %}
+{% load url from future %}
+
+{% block title %}Система учета Интернет-трафика{% endblock %}
+
+{% block status %}
+<div id="status">
+        {% if quota_used != None %}
+        <h1>{{ quota_used|filesizeformat }} 
+            / {{ quota_full|filesizeformat }}</h1>
+        {% endif %}
+        {% if group != None %}
+            <h2>{{ group }}</h2>
+        {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}    
+
+<div id="name"><h1>{{ user.get_full_name }}</h1></div>
+
+{% if top10_session %}
+<div class='top10'>
+    <h3>За последний час:</h3>
+    <table>
+        {% for i in top10_session %}
+            <tr class="{% cycle 'odd' 'even' %}">
+                <td class='address'>{{ i.dst|resolv_ip }}</td>
+                <td class='bytes'>{{ i.traf_in|filesizeformat }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endif %}
+
+{% if top10_month %}
+<div class='top10'>
+    <h3>За месяц:</h3>
+    <table>
+        {% for i in top10_month %}
+            <tr class="{% cycle 'odd' 'even' %}">
+                <td class='address'>{{ i.dst|resolv_ip }}</td>
+                <td class='bytes'>{{ i.traf_in|filesizeformat }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+
+{% endblock content %}
+

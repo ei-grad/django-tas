@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block title %}Вход в систему учета Интернет-трафика{% endblock %}
+
+{% block content %}
+<p>Для доступа к сети Интернет необходимо авторизоваться в системе учета
+трафика.</p>
+
+<div id='login'>
+
+{% if form.errors %}
+<p>Неверное имя пользователя или пароль. Попробуйте войти ещё раз.</p>
+{% endif %}
+
+<form method="post" action="{% url 'billing.views.login' %}">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Войти" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+</div>
+{% endblock %}
+

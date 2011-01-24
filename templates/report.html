@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block header %}{{ report_name }}{% endblock %}
+
+{% block body %}
+
+<h3>{{ report_name }}</h3>
+
+<table class="report">
+{% for i in data: %}
+    {% if loop.index == 1: %}
+        <tr><th></th><th>{{ i.keys() | join("</th><th>") }}</th></tr>
+    {% endif %}
+    <tr class="{{ loop.cycle('odd', 'even') }}"><td>{{ loop.index }}</td><td>{{ i.values() | join("</td><td>")}}</td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}
